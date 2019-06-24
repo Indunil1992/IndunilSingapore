@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "IndunilSingapore/lambda.js",
-        "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
+        "code": "exports.handler = function(event, context, callback) {\n\n    \n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
@@ -30,7 +30,12 @@
           "memory": 128,
           "layers": []
         },
-        "triggers": []
+        "triggers": [
+          {
+            "resourceName": "apigapSoutheast1Singaporeqainduany",
+            "config": {}
+          }
+        ]
       }
     },
     "deletedFiles": [],
@@ -39,7 +44,27 @@
       "fc67827b-e19b-41db-9ddf-084ad226d299"
     ],
     "currentFileId": "fc67827b-e19b-41db-9ddf-084ad226d299",
-    "resources": {},
+    "resources": {
+      "apigapSoutheast1Singaporeqainduany": {
+        "name": "apigapSoutheast1Singaporeqainduany",
+        "type": "API_GATEWAY",
+        "config": {
+          "selectedRegion": "ap-southeast-1",
+          "apiMode": 0,
+          "apiName": "Singapore",
+          "endpointType": "REGIONAL",
+          "resourceMode": 0,
+          "resourceName": "qa/indu",
+          "resourcePath": "/qa/indu",
+          "restMethod": "ANY",
+          "proxyIntegration": false,
+          "enableCORS": false,
+          "stageMode": 0,
+          "stageName": "test1",
+          "mode": 0
+        }
+      }
+    },
     "customTemplate": {
       "dialect": null,
       "definitions": {}
@@ -65,7 +90,7 @@
     "projectRegion": "ap-southeast-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1561379537703
+    "lastSave": 1561379755969
   },
   "VCS_STATE": {
     "provider": "GitHub",
