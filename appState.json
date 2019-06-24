@@ -1,0 +1,77 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "37e654ab-5880-4204-bf50-2c4a478ced4e": {
+        "id": "37e654ab-5880-4204-bf50-2c4a478ced4e",
+        "parent": null,
+        "name": "IndunilSingapore",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "fc67827b-e19b-41db-9ddf-084ad226d299"
+        ],
+        "isRemovable": false,
+        "filePath": "IndunilSingapore"
+      },
+      "fc67827b-e19b-41db-9ddf-084ad226d299": {
+        "id": "fc67827b-e19b-41db-9ddf-084ad226d299",
+        "parent": "37e654ab-5880-4204-bf50-2c4a478ced4e",
+        "name": "lambda.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "IndunilSingapore/lambda.js",
+        "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
+        "config": {
+          "runtime": "nodejs8.10",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        },
+        "triggers": []
+      }
+    },
+    "deletedFiles": [],
+    "rootNode": "37e654ab-5880-4204-bf50-2c4a478ced4e",
+    "openFiles": [
+      "fc67827b-e19b-41db-9ddf-084ad226d299"
+    ],
+    "currentFileId": "fc67827b-e19b-41db-9ddf-084ad226d299",
+    "resources": {},
+    "customTemplate": {
+      "dialect": null,
+      "definitions": {}
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {}
+    }
+  },
+  "PROJECT_META": {
+    "projectName": "IndunilSingapore",
+    "projectDescription": "IndunilSingapore",
+    "projectVersion": "1.0.0",
+    "projectRegion": "ap-southeast-1",
+    "platform": "AWS",
+    "platformRegions": {},
+    "lastSave": 1561379537703
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "IndunilSingapore",
+      "url": "https://github.com/Indunil1992/IndunilSingapore"
+    }
+  }
+}
