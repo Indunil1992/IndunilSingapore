@@ -9,7 +9,9 @@
         "isDirectory": true,
         "children": [
           "480d9cc9-89ad-4f9b-be0d-40ea16519aaa",
-          "065ce939-07f2-43a5-bea9-4f06d8005f86"
+          "065ce939-07f2-43a5-bea9-4f06d8005f86",
+          "7a4c6984-c93b-4a9a-90a3-f748d18e32b5",
+          "a00eef73-f7ad-4699-a631-79fd09fcd7b1"
         ],
         "isRemovable": false,
         "filePath": "indunilsingapore"
@@ -23,9 +25,8 @@
         "children": [],
         "isRemovable": true,
         "filePath": "indunilsingapore/lambda.js",
-        "code": "let SL_AWS = require('slappforge-sdk-aws');\nlet connectionManager = require('./ConnectionManager');\nconst rds = new SL_AWS.RDS(connectionManager);\n\nexports.handler = function (event, context, callback) {\n\n    // You must always end/destroy the DB connection after it's used\n    rds.beginTransaction({\n        instanceIdentifier: 'indunil'\n    }, function (error, connection) {\n        if (error) {\n            throw error;\n        }\n    });\n\n\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
         "config": {
-          "runtime": "nodejs8.10",
+          "runtime": "nodejs10.x",
           "handler": "handler",
           "timeout": 60,
           "memory": 128,
@@ -41,16 +42,47 @@
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
-        "filePath": "indunilsingapore/ConnectionManager.js",
-        "code": "module.exports = function() {\n    this.dbConnections = [];\n\n    this.dbConnections[\"indunil\"] = {\n        host: process.env.EndPoint_rdsIndunil,\n        port: process.env.Port_rdsIndunil,\n        user: process.env.User_rdsIndunil,\n        password: process.env.Password_rdsIndunil,\n        database: \"indunil\"\n    };\n};"
+        "filePath": "indunilsingapore/ConnectionManager.js"
+      },
+      "7a4c6984-c93b-4a9a-90a3-f748d18e32b5": {
+        "id": "7a4c6984-c93b-4a9a-90a3-f748d18e32b5",
+        "parent": "32241325-4296-422e-a9c9-e6b8e9ae5f52",
+        "name": "pythontest.py",
+        "type": "PYTHON_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "indunilsingapore/pythontest.py",
+        "cursor": {
+          "lineNumber": 1,
+          "column": 1
+        },
+        "config": {
+          "runtime": "python2.7",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        },
+        "triggers": []
+      },
+      "a00eef73-f7ad-4699-a631-79fd09fcd7b1": {
+        "id": "a00eef73-f7ad-4699-a631-79fd09fcd7b1",
+        "parent": "32241325-4296-422e-a9c9-e6b8e9ae5f52",
+        "name": "__init__.py",
+        "type": "PYTHON_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "indunilsingapore/__init__.py"
       }
     },
-    "deletedFiles": [],
     "rootNode": "32241325-4296-422e-a9c9-e6b8e9ae5f52",
     "openFiles": [
-      "480d9cc9-89ad-4f9b-be0d-40ea16519aaa"
+      "480d9cc9-89ad-4f9b-be0d-40ea16519aaa",
+      "7a4c6984-c93b-4a9a-90a3-f748d18e32b5"
     ],
-    "currentFileId": "480d9cc9-89ad-4f9b-be0d-40ea16519aaa",
+    "currentFileId": "7a4c6984-c93b-4a9a-90a3-f748d18e32b5",
     "resources": {
       "rds-indunil": {
         "name": "rds-indunil",
@@ -93,11 +125,22 @@
           "enableInject": true,
           "isNewFromGlobal": false
         }
+      },
+      "s3awsAmplifyHotspaces": {
+        "name": "s3awsAmplifyHotspaces",
+        "type": "S3",
+        "config": {
+          "mode": 1,
+          "bucket": {
+            "region": "ap-southeast-1",
+            "name": "aws-amplify-hotspaces"
+          }
+        }
       }
     },
     "customTemplate": {
       "dialect": null,
-      "definitions": {}
+      "definitions": null
     },
     "envVariables": [
       {
@@ -107,6 +150,14 @@
         "shouldPersist": false,
         "displayOnly": false,
         "editable": false
+      },
+      {
+        "lambdaId": "7a4c6984-c93b-4a9a-90a3-f748d18e32b5",
+        "varKey": "PYTHONPATH",
+        "varValue": "/var/runtime:/var/task/indunilsingapore",
+        "shouldPersist": true,
+        "displayOnly": false,
+        "editable": true
       }
     ],
     "packageJSON": {
@@ -116,6 +167,13 @@
           "language": "javascript",
           "version": "0.0.5",
           "dev": false,
+          "notRemovable": false
+        },
+        "boto3": {
+          "name": "boto3",
+          "language": "python",
+          "version": "1.9.6",
+          "dev": true,
           "notRemovable": false
         }
       }
@@ -127,8 +185,9 @@
     "projectVersion": "1.0.0",
     "projectRegion": "ap-southeast-1",
     "platform": "AWS",
+    "language": "javascript",
     "platformRegions": {},
-    "lastSave": 1561627022465
+    "lastSave": 1580716949614
   },
   "VCS_STATE": {
     "provider": "GitHub",
