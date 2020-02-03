@@ -32,7 +32,11 @@
           "memory": 128,
           "layers": []
         },
-        "triggers": []
+        "triggers": [],
+        "cursor": {
+          "lineNumber": 17,
+          "column": 6
+        }
       },
       "065ce939-07f2-43a5-bea9-4f06d8005f86": {
         "id": "065ce939-07f2-43a5-bea9-4f06d8005f86",
@@ -136,6 +140,17 @@
             "name": "aws-amplify-hotspaces"
           }
         }
+      },
+      "s3btbucketimages": {
+        "name": "s3btbucketimages",
+        "type": "S3",
+        "config": {
+          "mode": 1,
+          "bucket": {
+            "region": "ap-southeast-1",
+            "name": "btbucket.images"
+          }
+        }
       }
     },
     "customTemplate": {
@@ -187,7 +202,7 @@
     "platform": "AWS",
     "language": "javascript",
     "platformRegions": {},
-    "lastSave": 1580716949614
+    "lastSave": 1580717402433
   },
   "VCS_STATE": {
     "provider": "GitHub",
